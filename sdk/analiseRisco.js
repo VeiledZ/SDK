@@ -1,11 +1,14 @@
 // analiseRisco.js
+const regras = require('./regras');
+
 function analisarRisco(dados) {
   let score = 0;
 
-  if (dados.tempo_na_pagina < 3) score += 30;
-  if (!dados.movimento_mouse) score += 30;
-  if (dados.dispositivo_novo) score += 20;
-  if (dados.ip_suspeito) score += 20;
+  regras.forEach(regra => {
+    if (regra.condicao(dados)) {
+      score += regra.peso;
+    }
+  });
 
   const action = score > 75 ? 'deny'
                : score > 30 ? 'review'
