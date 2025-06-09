@@ -1,8 +1,6 @@
 // index.js
-
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const analisarRisco = require('./analiseRisco');
 
 app.use(express.json());
@@ -18,6 +16,6 @@ app.post('/identity/verify', (req, res) => {
   res.json(resultado);
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+app.listen(3000, () => {
+  console.log('✅ Servidor rodando em http://localhost:3000');
 });

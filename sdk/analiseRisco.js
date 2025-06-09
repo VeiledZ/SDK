@@ -1,5 +1,4 @@
 // analiseRisco.js
-
 function analisarRisco(dados) {
   let score = 0;
 
@@ -8,9 +7,9 @@ function analisarRisco(dados) {
   if (dados.dispositivo_novo) score += 20;
   if (dados.ip_suspeito) score += 20;
 
-  let action = 'allow';
-  if (score > 75) action = 'deny';
-  else if (score > 30) action = 'review';
+  const action = score > 75 ? 'deny'
+               : score > 30 ? 'review'
+               : 'allow';
 
   return { score, action };
 }

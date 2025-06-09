@@ -1,0 +1,14 @@
+{
+  "name": "sdk-antifraude",
+  "version": "1.0.0",
+  "description": "SDK antifraude simples com score baseado em regras",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Enzo Gianini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
