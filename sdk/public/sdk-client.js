@@ -50,10 +50,7 @@
     })
       .then(res => res.json())
       .then(resposta => {
-        div.innerHTML = `
-          <p><strong>Score:</strong> ${resposta.score}</p>
-          <p><strong>Ação:</strong> ${resposta.action}</p>
-        `;
+        div.innerHTML = '';
 
         if (resposta.action === 'deny') {
           div.innerHTML += `<p style="color:red;">⛔ Acesso bloqueado por comportamento suspeito</p>`;
