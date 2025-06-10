@@ -1,6 +1,5 @@
-// analiseRisco.js
 const regras = require('./regras');
-const registrarEvento = require('./logger');
+const registrarEvento = require('./logger'); // ✅ IMPORTADO
 
 function analisarRisco(dados) {
   let score = 0;
@@ -11,12 +10,10 @@ function analisarRisco(dados) {
     }
   });
 
-  const action = score > 75 ? 'deny'
-               : score > 30 ? 'review'
-               : 'allow';
+  const action = score > 75 ? 'deny' : score > 30 ? 'review' : 'allow';
 
   const resultado = { score, action };
-  registrarEvento({ ...dados, ...resultado });
+  registrarEvento({ ...dados, ...resultado }); // ✅ REGISTRANDO
 
   return resultado;
 }

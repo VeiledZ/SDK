@@ -11,6 +11,7 @@ function registrarEvento(evento) {
   };
 
   let logs = [];
+
   if (fs.existsSync(LOG_PATH)) {
     const conteudo = fs.readFileSync(LOG_PATH, 'utf-8');
     logs = conteudo ? JSON.parse(conteudo) : [];
