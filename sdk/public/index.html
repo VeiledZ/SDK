@@ -1,35 +1,70 @@
-app.use(express.static('public'));
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Teste do SDK Antifraude</title>
+  <meta charset="UTF-8" />
+  <title>Login - SDK Antifraude</title>
   <style>
     body {
       font-family: sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      max-width: 400px;
+      margin: 0 auto;
       padding: 30px;
-      background: #f9f9f9;
-      color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
     }
     #resultado {
       margin-top: 20px;
-      padding: 20px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .painel-btn {
+      margin-top: 20px;
+      background-color: #007bff;
+    }
+    .painel-btn:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo ao site teste do SDK</h1>
-  <p>Seu comportamento será analisado automaticamente.</p>
+  <div class="container">
+    <h2>Login</h2>
 
-  <div id="resultado">
-    ⏳ Coletando dados...
+    <input type="email" placeholder="E-mail" id="email" required />
+    <input type="password" placeholder="Senha" id="senha" required />
+    <button onclick="enviarLogin()">Entrar</button>
+
+    <div id="resultado">⏳ Coletando comportamento...</div>
+
+    <button class="painel-btn" onclick="window.location.href='painel.html'">
+      📊 Ver painel de eventos
+    </button>
   </div>
 
-  <!-- Aqui o SDK front-end é carregado -->
   <script src="sdk-client.js"></script>
 </body>
 </html>
