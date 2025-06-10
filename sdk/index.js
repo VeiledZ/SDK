@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const analisarRisco = require('./analiseRisco');
 
+// 👉 Serve os arquivos da pasta 'public'
+app.use(express.static('public'));
+
 app.use(express.json());
 
 app.post('/identity/verify', (req, res) => {
@@ -16,10 +19,11 @@ app.post('/identity/verify', (req, res) => {
   res.json(resultado);
 });
 
-app.listen(3000, () => {
-  console.log('✅ Servidor rodando em http://localhost:3000');
+// Rota raiz opcional (se quiser mostrar algo direto no GET /)
+app.get('/', (req, res) => {
+  res.send('✅ SDK Antifraude rodando! Acesse /index.html');
 });
 
-app.get('/', (req, res) => {
-  res.send('✅ SDK Antifraude rodando! Use POST /identity/verify');
+app.listen(3000, () => {
+  console.log('✅ Servidor rodando em http://localhost:3000');
 });
