@@ -1,0 +1,35 @@
+app.use(express.static('public'));
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste do SDK Antifraude</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo ao site teste do SDK</h1>
+  <p>Seu comportamento será analisado automaticamente.</p>
+
+  <div id="resultado">
+    ⏳ Coletando dados...
+  </div>
+
+  <!-- Aqui o SDK front-end é carregado -->
+  <script src="sdk-client.js"></script>
+</body>
+</html>
