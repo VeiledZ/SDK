@@ -1,10 +1,13 @@
 // index.js
 const express = require('express');
 const app = express();
+const logsRoute = require('./routes/logs');
 const analisarRisco = require('./analiseRisco');
 
 // 👉 Serve os arquivos da pasta 'public'
 app.use(express.static('public'));
+
+app.use('/logs', logsRoute);
 
 app.use(express.json());
 

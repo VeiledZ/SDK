@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Antifraude</title>
+  <style>
+    body { font-family: sans-serif; padding: 30px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f4f4f4; }
+    .deny { background-color: #ffcccc; }
+    .review { background-color: #fff5cc; }
+    .allow { background-color: #ccffcc; }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Painel de Eventos do SDK Antifraude</h1>
+  <button onclick="exportarCSV()">📤 Exportar como CSV</button>
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Score</th>
+        <th>Ação</th>
+        <th>Tempo na Página</th>
+        <th>Mouse</th>
+        <th>Resolução</th>
+        <th>Idioma</th>
+      </tr>
+    </thead>
+    <tbody id="conteudo-tabela">
+      <!-- linhas vão aqui -->
+    </tbody>
+  </table>
+
+  <script src="painel.js"></script>
+</body>
+</html>
